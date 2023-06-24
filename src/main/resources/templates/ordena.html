@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ordena Aquí</title>
-  </head>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
-  />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "sans-serif"],
-          },
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ordena Aquí</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Inter", "sans-serif"],
         },
       },
-    };
-  </script>
-  <body>
-    <div class="flex flex-col h-screen">
-      <!-- TOP -->
-      <header th:replace="plantilla/template :: header" class="p-0"></header>
+    },
+  };
+</script>
 
-      <!-- MID -->
-      <main class="p-4 flex-grow">
-        <div class="aspect-ratio: 16 / 9 flex flex-wrap justify-center mt-0">
-          <section class="bg-white dark:bg-gray-100 border p-4 rounded">
-            <div class="container px-6 py-10 mx-auto">
-            <h1 class="block mt-4 text-2xl font-semibold dark:text-gray-800 md:text-3xl">Menú Disponible:</h1>
-            <br>
+<body>
+  <div class="flex flex-col h-screen">
+    <!-- TOP -->
+    <header th:replace="plantilla/template :: header" class="p-0"></header>
+
+    <!-- MID -->
+    <main class="p-4 flex-grow w-full bg-white dark:bg-gray-100 ">
+      <div class="justify-center mt-0">
+        <section class="bg-white dark:bg-gray-100 rounded">
+          <div class="container px-0 py-5 mx-auto">
+            <h1 class="text-center mt-4 dark:text-gray-800 text-5xl pb-8"
+              style="font-family: 'Phudu', cursive;">Menú Disponible</h1>
             <div class="grid grid-cols-3 gap-4">
-              <div
-                th:each="plato : ${productos}" th:if="${plato.estado == 1}"
-                class="border p-4 rounded shadow-sm bg-white">
+              <div th:each="plato : ${productos}" th:if="${plato.estado == 1}"
+                class="border p-4 rounded shadow-sm bg-white w-full">
                 <img class="w-full h-64 object-cover mb-4 rounded" />
-                <h2
-                  class="text-xl font-semibold mb-2"
-                  th:text="${plato.nombre}">
+                <div class="flex flex-col rounded-lg bg-white md:max-w-xl md:flex-row">
+                  <div
+                    class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-60 md:rounded-none md:rounded-l-lg px-2">
+                    <h2 class="text-xl font-semibold mb-2" th:text="${plato.nombre}">
+                    </h2>
+                    <p th:text="'Precio: S/.' + ${plato.precio}" style="margin-bottom: 10px;"></p>
+                  </div>
+                  <div class="flex flex-col justify-start ml-auto my-auto">
+                    <button
+                      class="py-2 px-3 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
+                      <i class="fas fa-shopping-cart"></i> Añadir</button>
+                  </div>
+                </div>
+                <!-- <h2 class="text-xl font-semibold mb-2" th:text="${plato.nombre}">
                 </h2>
-                <p th:text="'Precio: S/.' + ${plato.precio}"></p>
-                <br>
+                <p th:text="'Precio: S/.' + ${plato.precio}" style="margin-bottom: 10px;"></p>
                 <button
-                class="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
-              >Ordenar</button>
+                  class="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">Ordenar</button> -->
               </div>
             </div>
           </div>
-          </section>
-        </div>
-      </main>
+        </section>
+      </div>
+    </main>
 
-      <!-- BOTTOM -->
-      <footer
-        th:replace="plantilla/template :: footer"
-        class="bg-gray-200 text-center lg:text-left"
-      ></footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-  </body>
+    <!-- BOTTOM -->
+    <footer th:replace="plantilla/template :: footer" class="bg-gray-200 text-center lg:text-left"></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+
 </html>

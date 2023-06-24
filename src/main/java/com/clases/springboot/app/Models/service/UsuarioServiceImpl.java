@@ -37,6 +37,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 				Arrays.asList(new Rol("ROLE_USER")),
 				registroDTO.getTelefono(),
 				registroDTO.getEstado());
+				cliente.setEstado(1);
 		return clienteDao.save(cliente);
 	}
 

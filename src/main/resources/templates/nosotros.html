@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Nosotros</title>
+  <meta charset="UTF-8">
+  <title>Nosotros</title>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -19,65 +20,77 @@
     }
   }
 </script>
+
 <body>
 
-	<div class="flex flex-col h-screen">
+  <div class="flex flex-col h-screen">
 
-		<!-- TOP -->
-		<header th:replace="plantilla/template :: header" class="p-0">
-		</header>
+    <!-- TOP -->
+    <header th:replace="plantilla/template :: header" class="p-0">
+    </header>
 
-		<!-- MID -->
-		<main class="p-4 flex-grow">
+    <!-- MID -->
+    <main class="p-4 flex-grow"  th:fragment="nosotros">
 
-			<div class="aspect-ratio: 16 / 9 flex flex-wrap justify-center mt-0">
-				
-				<section class="bg-white dark:bg-gray-900">
-    <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">BIENVENIDOS A DELIFAST</h1>
+      <div class="aspect-ratio: 16 / 9 justify-center mt-0">
 
-        <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover w-full lg:mx-6 lg:w-auto rounded-xl h-auto lg:h-auto" src="/../imagenes/logo.jpg"alt="">
+        <section class="bg-white dark:bg-gray-900">
+          <div class="container px-6 py-10 mx-auto">
+            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">BIENVENIDOS A
+              DELIFAST</h1>
 
-            <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
+              <img class="object-cover w-full lg:mx-6 lg:w-auto rounded-xl h-auto lg:h-auto" src="/../imagenes/logo.jpg"
+                alt="">
+
+              <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
 
                 <a class="block mt-4 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
-                    DeliFast, tu restaurante de delivery preferido!
+                  DeliFast, tu restaurante de delivery preferido!
                 </a>
 
                 <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                    DeliFast es más que un restaurante, es tu aliado para solucionar las necesidades de comida en cualquier momento del día. Ofrecemos una gran variedad de deliciosas comidas preparadas con ingredientes frescos y de alta calidad, entregadas rápidamente en la comodidad de tu hogar u oficina.
+                  DeliFast es más que un restaurante, es tu aliado para solucionar las necesidades de comida en
+                  cualquier momento del día. Ofrecemos una gran variedad de deliciosas comidas preparadas con
+                  ingredientes frescos y de alta calidad, entregadas rápidamente en la comodidad de tu hogar u oficina.
                 </p>
                 <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                Nuestra misión es proporcionarte la comida más deliciosa y satisfactoria a la velocidad que tu estilo de vida demanda. Hemos perfeccionado nuestro servicio de entrega para garantizar que cada pedido llegue caliente y fresco, justo a tiempo para tu siguiente comida.
+                  Nuestra misión es proporcionarte la comida más deliciosa y satisfactoria a la velocidad que tu estilo
+                  de vida demanda. Hemos perfeccionado nuestro servicio de entrega para garantizar que cada pedido
+                  llegue caliente y fresco, justo a tiempo para tu siguiente comida.
                 </p>
                 <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                El proceso de pedido en DeliFast es sencillo y conveniente. Solo tienes que visitar nuestra página web, elegir tus platos favoritos, y esperar a que la comida llegue a tu puerta. Aceptamos todas las principales tarjetas de crédito y débito, así como diversos métodos de pago en línea para tu conveniencia.
+                  El proceso de pedido en DeliFast es sencillo y conveniente. Solo tienes que visitar nuestra página
+                  web, elegir tus platos favoritos, y esperar a que la comida llegue a tu puerta. Aceptamos todas las
+                  principales tarjetas de crédito y débito, así como diversos métodos de pago en línea para tu
+                  conveniencia.
                 </p>
-                
+
                 <div class="flex items-center mt-6">
-                    <img class="object-cover object-center w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="">
+                  <img class="object-cover object-center w-10 h-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                    alt="">
 
-                    <div class="mx-4">
-                        <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia. Anderson</h1>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Lead Developer</p>
-                    </div>
+                  <div class="mx-4">
+                    <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia. Anderson</h1>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Lead Developer</p>
+                  </div>
                 </div>
-                
-            </div>
-        </div>
-    </div>
-</section>
-				
-				
-            </div>
 
-		</main>
+              </div>
+            </div>
+          </div>
+        </section>
 
-		<!-- BOTTOM -->
-		<footer th:replace="plantilla/template :: footer"
-			class="bg-gray-200 text-center lg:text-left"> </footer>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+      </div>
+
+    </main>
+
+    <!-- BOTTOM -->
+    <footer th:replace="plantilla/template :: footer" class="bg-gray-200 text-center lg:text-left"> </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
+
 </html>
